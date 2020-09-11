@@ -5,11 +5,18 @@ import {
   StyleSheet,
   TextInput,
   TouchableOpacity,
+  Image,
+  StatusBar,
+  LayoutAnimation,
+  Dimensions,
 } from "react-native";
 
 import * as firebase from "firebase";
 
 export default class LoginScreen extends React.Component {
+  static navigationOptions = {
+    header: null,
+  };
   state = {
     email: "",
     password: "",
@@ -26,8 +33,20 @@ export default class LoginScreen extends React.Component {
   };
 
   render() {
+    LayoutAnimation.easeInEaseOut();
     return (
       <View style={styles.container}>
+        <StatusBar barStyle="light-content"></StatusBar>
+        <Image
+          source={require("../assets/auth_header.png")}
+          style={{
+            alignSelf: "center",
+            height: 500,
+            width: 500,
+            marginTop: -250,
+            marginLeft: -30,
+          }}
+        ></Image>
         <Text style={styles.greeting}>{"Hello again,\nWelcome back"}</Text>
 
         <View style={styles.errorMessage}>
@@ -72,7 +91,10 @@ export default class LoginScreen extends React.Component {
           <Text style={{ color: "#fff", fontWeight: "500" }}>Sign in</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={{ alignSelf: "center", marginTop: 32 }}>
+        <TouchableOpacity
+          style={{ alignSelf: "center", marginTop: 32 }}
+          onPress={() => this.props.navigation.navigate("Register")}
+        >
           <Text style={{ color: "#d2d2d2" }}>
             New to MoMo?{" "}
             <Text style={{ color: "#E9446A", fontWeight: "500" }}>Sign Up</Text>
