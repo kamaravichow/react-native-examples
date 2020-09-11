@@ -43,7 +43,7 @@ export default class LoginScreen extends React.Component {
             alignSelf: "center",
             height: 500,
             width: 500,
-            marginTop: -250,
+            marginTop: -320,
             marginLeft: -30,
           }}
         ></Image>

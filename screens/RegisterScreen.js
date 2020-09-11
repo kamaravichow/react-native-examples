@@ -46,7 +46,7 @@ export default class RegisterScreen extends React.Component {
             alignSelf: "center",
             height: 500,
             width: 500,
-            marginTop: -250,
+            marginTop: -380,
             marginLeft: -30,
           }}
         ></Image>
